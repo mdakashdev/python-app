@@ -1,0 +1,196 @@
+# Python 
+> Python is a programming language
+
+## What is FastAPI
+>FastAPI হলো Python-এর framework।
+
+> FastAPI হলো Python-এর একটা modern web framework, যা দিয়ে REST API বানানো হয়।
+
+Laravel যেমন PHP-এর framework।
+
+## Uvicorn কী?
+>Server হচ্ছে Uvicorn। 
+
+>FastAPI নিজে server না। FastAPI শুধু framework।
+
+Laravel-এ, php artisan serve (PHP-এর server start হয়।)
+```text
+Laravel
+↓
+PHP Built-in Server
+```
+
+Python-এ, uvicorn app.main:app (Uvicorn server start করে।)
+```text
+FastAPI
+↓
+Uvicorn
+```
+Client-এর request প্রথমে Uvicorn receive করে। তারপর FastAPI-এর কাছে পাঠায়।
+
+## What is pip ?
+**`pip` = Python Package Installer**
+
+যেমন Laravel/PHP-তে:
+
+```bash
+composer require laravel/sanctum
+```
+
+তেমনি Python-এ:
+
+```bash
+pip3 install fastapi
+```
+
+অর্থাৎ `pip` দিয়ে Python package/library install, update এবং remove করা হয়।
+
+---
+
+## What is `venv` ?
+
+`venv` = **Virtual Environment**
+
+এটা project-এর জন্য আলাদা Python environment তৈরি করে।
+
+Laravel-এ যেমন প্রতিটি project-এর নিজস্ব `vendor/` folder থাকে, তেমনি Python-এ `venv` project-এর dependencies আলাদা রাখে।
+
+---
+
+
+
+
+
+ami shiktechi, laravel a api authentication kichu endpoint korechi, 
+sei api endpoint gulo python a kortechi, aar relate korar try korbo
+aar learn korbo.
+
+
+>"Laravel er একই problem Python ecosystem দিয়ে solve করব"
+
+তাহলে এটা শেখার অন্যতম সেরা উপায়।
+
+## কেন এটা ভালো?
+
+তোমার কাছে already problem definition আছে।
+
+তুমি জানো— Register কী করে , Login কী করে
+
+অর্থাৎ এখন তোমাকে business logic নিয়ে ভাবতে হবে না।
+
+তোমার focus থাকবে—  Python ecosystem কিভাবে একই কাজ করে?
+
+এতে cognitive load অনেক কমে যাবে।
+
+## আমি যেভাবে করতাম
+
+Laravel
+
+```Laravel
+Controller
+↓
+Service
+↓
+Repository
+↓
+Model
+```
+
+Python (FastAPI)
+
+```text
+app/
+    api/
+        auth.py
+    services/
+        auth_service.py
+    repositories/
+        user_repository.py
+    schemas/
+        auth.py
+    models/
+        user.py
+    core/
+        security.py
+        auth.py
+    database.py
+main.py
+```
+
+দেখবে structure অনেক familiar লাগবে।
+
+## একই API এক এক করে বানাও
+
+Laravel - POST /register
+
+তারপর FastAPI - POST /register
+
+এভাবে একটার পর একটা।
+
+## প্রতিটা endpoint বানানোর সময় প্রশ্ন করবে
+
+- Laravel-এ Request Validation 
+- Python-এ? Pydantic 
+- Laravel - Middleware 
+- Python? Dependency Injection 
+- Laravel - Hash::make()
+- Python? passlib / bcrypt 
+- Laravel - Auth::user()
+- Python? Current User Dependency 
+- Laravel - Repository 
+- Python? Repository Pattern 
+- Laravel - Resource 
+- Python? Response Model
+
+> এভাবে comparison করলে অনেক দ্রুত শিখবে।
+
+
+
+
+### endpoint in router
+
+Laravel 
+>Route::get('/users', ...)
+
+FastAPI
+```text
+@app.get("/users")
+def users()
+    return []
+```
+
+FastAPI internally
+```text
+Receive Request
+↓
+Find Route
+↓
+Call Function
+↓
+Convert JSON
+↓
+Return Response
+```
+
+---
+
+# তোমার Laravel experience অনুযায়ী
+
+এভাবে মনে রাখো:
+
+| Laravel       | Python               |
+| ------------- | -------------------- |
+| PHP           | Python               |
+| Laravel       | FastAPI              |
+| artisan serve | uvicorn              |
+| Route         | @app.get()           |
+| Controller    | Function / APIRouter |
+| Request       | Pydantic             |
+| Resource      | Response Model       |
+| Middleware    | Middleware / Depends |
+| Service       | Service              |
+| Repository    | Repository           |
+
+---
+
+# settings.md
