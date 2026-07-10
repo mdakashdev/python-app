@@ -331,11 +331,6 @@ Uvicorn running on http://127.0.0.1:8000
 
 
 
-
-
-
-
-
 # .venv নতুন করে তৈরি করি
 
 Step 1 — venv deactivate করো
