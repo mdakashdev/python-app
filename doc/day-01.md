@@ -9,7 +9,9 @@
 Laravel যেমন PHP-এর framework।
 
 ## Uvicorn কী?
->Server হচ্ছে Uvicorn। 
+>Server হচ্ছে Uvicorn।  
+
+Uvicorn → ASGI Server (যেটা application run করবে)
 
 >FastAPI নিজে server না। FastAPI শুধু framework।
 
@@ -57,6 +59,38 @@ Laravel-এ যেমন প্রতিটি project-এর নিজস্ব
 
 ---
 
+### `activate` আসলে কী করে?
+
+এটা Python install করে না, `venv`-এর ভিতরে ঢুকেও না।
+
+এটা শুধু terminal-কে বলে:
+
+> **"এখন থেকে এই project-এর Python এবং pip ব্যবহার করো।"**
+
+উদাহরণ: Activate করার আগে:
+
+```bash
+which python3
+```
+
+Output হতে পারে: /Library/Frameworks/Python.framework/Versions/3.12/bin/python3
+
+Activate করার পরে:
+
+```bash
+which python
+```
+
+Output হবে: .../python-auth-api/.venv/bin/python
+
+অর্থাৎ এখন থেকে:
+
+* `python` → `.venv`-এর Python
+* `pip` → `.venv`-এর pip
+
+এটাই virtual environment-এর মূল উদ্দেশ্য।
+
+---
 
 
 
@@ -194,3 +228,4 @@ Return Response
 ---
 
 # settings.md
+ekhane project setting er manual acche
