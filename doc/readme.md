@@ -1,15 +1,14 @@
-Task
-
+# Task
+```text
 ✅ Python version check
-
-✅ Virtual environment তৈরি
-
+✅ Python environment ready
+✅ Virtual Environment (`.venv`) তৈরি
 ✅ Activate
-
-✅ fastapi install
-
-✅ uvicorn install
-
+✅ FastAPI install
+✅ Uvicorn install
+✅ Project structure তৈরি
+✅ `main.py` তৈরি
+✅ FastAPI server run
+✅ Browser থেকে JSON response পাওয়া
 ✅ requirements.txt generate
-
-✅ Folder structure তৈরি
+```
