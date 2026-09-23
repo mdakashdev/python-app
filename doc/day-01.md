@@ -1,8 +1,8 @@
 # Python 
 > Python is a programming language
 
-## What is FastAPI
->FastAPI হলো Python-এর framework।
+## What is FastAPI & Flask
+>FastAPI & Flask হলো Python-এর framework।
 
 > FastAPI হলো Python-এর একটা modern web framework, যা দিয়ে REST API বানানো হয়।
 
@@ -226,7 +226,6 @@ Return Response
 
 # Settings.md
 >ekhane project setup er manual acche
-
 
 # Achievement
 
