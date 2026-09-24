@@ -6,7 +6,11 @@ amra PostgreSQL install korbo - see @ psql/setup.md
 
 ## Migration 
 
-install - `pip3 install alembic`
+install - `pip3 install alembic` or `python -m pip install alembic`
+
+(.venv) softzino@Mds-MacBook-Pro python-auth-api % python -m pip install alembic
+
+inside virtual environment.
 
 
 ## work with database - SQLAlchemy

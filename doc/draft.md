@@ -1,0 +1,71 @@
+phthon, fastAPi, Flask, uvicorn, pip, venv, activate
+Pydantic, Injection, passlib
+requrement, .toml, activate, project run, 
+
+
+
+
+
+question - 
+ 1. Swagger kivabe open korbo ?
+ /docs open korlei - peye jabo.
+ http://127.0.0.1:8000/docs
+
+ 2. postman theke call kora jai.
+
+ 3. PostgreSQL ki dekha jai kon interface a  
+
+
+python is programming language,
+fastAPI is a modern web framework
+flask is light weight web framework
+uvirorn hocche server / ASGI Server ; as like php aritsan server
+pip hocche - package installer ; as like composer
+venv hocche - virtual environment ; as like vendor
+activate hocche - ei project pip & python babohar koro.
+Request Validation = Pydantic
+Middleware = Injection
+Hash::make() = passlib / bcrypt
+Resource = Response Model
+activate korlam source diye, now ekhon .venv diye pabo.
+main.py run korbo - python -m uvicorn app.main:app --reload
+package er talika create kora jai. pip freeze diye; ja diye notun vabe project setup & install kora jai.
+
+
+
+
+
+EndPoint :
+- /users
+
+
+1. route create 
+2. controller crete 
+3. db setup 
+4. model create
+4. migration create 
+    se jonno root a : `alembic init alembic` then setup env.py and alembic.ini
+    then table create - `alembic revision --autogenerate -m "create users table"`
+    run migration - `alembic upgrade head`
+5. DB Session তৈরি
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
