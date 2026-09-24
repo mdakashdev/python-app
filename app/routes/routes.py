@@ -1,4 +1,5 @@
 from fastapi import APIRouter
+from app.controller.auth_controller import register
 
 router = APIRouter(
     prefix="/api"
@@ -12,3 +13,8 @@ def get_users():
     return {
         "message": "successfully message from test api"
     }
+
+
+@router.post("/reg")
+def store():
+    return register()
