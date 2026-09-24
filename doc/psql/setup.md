@@ -1,6 +1,8 @@
 # PostgreSQL
 
-## in postgree
+install PostgreSQL: `brew install postgresql`
+
+## in PostgreSQL
 
 - psql postgres
 
@@ -15,13 +17,6 @@ You are now connected to database "fastapi_db" as user "softzino".
 > list or roles dekhar jonno
 
 fastapi_db=# \du
-
----
-
-SQLAlchemy → database-এর সাথে কাজ করবে
-psycopg → PostgreSQL-এর Python driver
-Alembic → Laravel migration-এর মতো database migration করবে
-
 
 > je kono path theke 
 
