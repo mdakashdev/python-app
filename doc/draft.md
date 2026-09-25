@@ -57,10 +57,14 @@ EndPoint :
     se jonno pydantic install korte hobe, and pydantic theke BaseModel use kore validation dite hobe.
     email validator er jonno - `pip install "pydantic[email]"` install kora lagbe.
     akta request file create korbo, schemas folder a like auth.py er maddhe - RegisterRequest create korbo.
-10. 
+10. `Insert`: প্রথমে আমরা শুধু get_db() কীভাবে Controller-এ পৌঁছাবে সেটা করব।
+    laravel a model diye insert kortam, aar db er kono kichu lagto na, but ekhane route db session nite holo keno
+    - insert successfully - alhamdulliah 
+    - controller a User model nilam and db.add diye insert kore dilam
+11. password hassing
 
-
-
+- এখানে User হলো Eloquent Model।
+  Laravel-এর Eloquent আগে থেকেই application-এর database connection/configuration-এর সাথে connected থাকে।
 
 
 
