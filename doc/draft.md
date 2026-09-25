@@ -39,7 +39,7 @@ EndPoint :
 - /users
 
 
-1. route create 
+1. route create & trigger from postman
 2. controller crete 
 3. db setup 
 4. model create
@@ -48,6 +48,12 @@ EndPoint :
     then table create - `alembic revision --autogenerate -m "create users table"`
     run migration - `alembic upgrade head`
 5. DB Session তৈরি
+6. Connect GUI using tableplus
+7. now, request recive korbo as like http request
+    se jonno - json data pathabo postman theke, aar Request import korlei hobe,
+    aar jodi formdata use korte cai tobe, python-multipart eita install korte hobe i think.
+8. terminal a data dekhar jonno - print() as like dd() but stop hobe na
+9. 
 
 
 

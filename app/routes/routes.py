@@ -1,5 +1,5 @@
-from fastapi import APIRouter
-from app.controller.auth_controller import register
+from fastapi import APIRouter, Request
+from app.controller.register_controller import store
 
 router = APIRouter(
     prefix="/api"
@@ -16,5 +16,7 @@ def get_users():
 
 
 @router.post("/reg")
-def store():
-    return register()
+async def register(request: Request):
+    data = await request.json()
+    print(data)
+    return store(data)
