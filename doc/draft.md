@@ -52,6 +52,28 @@ EndPoint :
 10. Insert
 
 
+Summary - 
+
+আমাদের complete flow:
+
+1. PostgreSQL install & database create
+2. Database setup — `.env`, connection file, `main.py`
+3. PostgreSQL-এর সাথে GUI — TablePlus
+4. Packages install — SQLAlchemy, psycopg, Alembic, python-dotenv
+5. Route / Endpoint create
+6. Controller create
+7. Model create
+8. Migration create & run
+9. Request validation / Pydantic schema create
+10. DB Session route-এ connect
+11. Controller থেকে DB insert
+
+এরপরের natural steps হবে:
+
+12. **Password hashing**
+13. **Login**
+14. **Authentication / JWT**
+
 
 
 
