@@ -44,28 +44,12 @@ EndPoint :
 3. db setup 
 4. model create
 4. migration create 
-    se jonno root a : `alembic init alembic` then setup env.py and alembic.ini
-    then table create - `alembic revision --autogenerate -m "create users table"`
-    run migration - `alembic upgrade head`
 5. DB Session তৈরি
 6. Connect GUI using tableplus
-7. `Request` : now, request recive korbo as like http request
-    se jonno - json data pathabo postman theke, aar Request import korlei hobe,
-    aar jodi formdata use korte cai tobe, python-multipart eita install korte hobe i think.
+7. Request
 8. terminal a data dekhar jonno - print() as like dd() but stop hobe na
-9. `RequestFile` : now, request file create kore, validation korbo. 
-    se jonno pydantic install korte hobe, and pydantic theke BaseModel use kore validation dite hobe.
-    email validator er jonno - `pip install "pydantic[email]"` install kora lagbe.
-    akta request file create korbo, schemas folder a like auth.py er maddhe - RegisterRequest create korbo.
-10. `Insert`: প্রথমে আমরা শুধু get_db() কীভাবে Controller-এ পৌঁছাবে সেটা করব।
-    laravel a model diye insert kortam, aar db er kono kichu lagto na, but ekhane route db session nite holo keno
-    - insert successfully - alhamdulliah 
-    - controller a User model nilam and db.add diye insert kore dilam
-11. password hassing
-
-- এখানে User হলো Eloquent Model।
-  Laravel-এর Eloquent আগে থেকেই application-এর database connection/configuration-এর সাথে connected থাকে।
-
+9. RequestFile 
+10. Insert
 
 
 

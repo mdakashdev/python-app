@@ -100,3 +100,11 @@ check tables data - `fastapi_db=# select * from users;`
 exit hote - \q
 
 entry neyar jonno - psql postgres
+
+
+# others things
+
+
+se jonno root a : `alembic init alembic` then setup env.py and alembic.ini
+then table create - `alembic revision --autogenerate -m "create users table"`
+run migration - `alembic upgrade head`
