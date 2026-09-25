@@ -1,9 +1,17 @@
 from fastapi import APIRouter, Request
 from app.controller.register_controller import store
+from app.schemas.auth import RegisterRequest
 
 router = APIRouter(
     prefix="/api"
 )
+
+@router.post("/reg")
+def register(request: RegisterRequest):
+#     data = await request.json()
+#     print(data)
+    return store(request)
+
 
 # route create : 23 Sep 26
 
@@ -13,10 +21,3 @@ def get_users():
     return {
         "message": "successfully message from test api"
     }
-
-
-@router.post("/reg")
-async def register(request: Request):
-    data = await request.json()
-    print(data)
-    return store(data)
