@@ -39,20 +39,40 @@ EndPoint :
 - /users
 
 
-1. route create 
+1. route create & trigger from postman
 2. controller crete 
 3. db setup 
 4. model create
 4. migration create 
-    se jonno root a : `alembic init alembic` then setup env.py and alembic.ini
-    then table create - `alembic revision --autogenerate -m "create users table"`
-    run migration - `alembic upgrade head`
 5. DB Session তৈরি
+6. Connect GUI using tableplus
+7. Request
+8. terminal a data dekhar jonno - print() as like dd() but stop hobe na
+9. RequestFile 
+10. Insert
 
 
+Summary - 
 
+আমাদের complete flow:
 
+1. PostgreSQL install & database create
+2. Database setup — `.env`, connection file, `main.py`
+3. PostgreSQL-এর সাথে GUI — TablePlus
+4. Packages install — SQLAlchemy, psycopg, Alembic, python-dotenv
+5. Route / Endpoint create
+6. Controller create
+7. Model create
+8. Migration create & run
+9. Request validation / Pydantic schema create
+10. DB Session route-এ connect
+11. Controller থেকে DB insert
 
+এরপরের natural steps হবে:
+
+12. **Password hashing**
+13. **Login**
+14. **Authentication / JWT**
 
 
 
