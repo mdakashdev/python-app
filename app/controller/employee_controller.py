@@ -27,3 +27,29 @@ def list(db: Session):
     ).all()
 
     return employee
+
+
+def update(id: int, data: RequestEmployee, db: Session):
+
+    employee = db.scalar(
+        select(Employee).where(Employee.id == id)
+    )
+
+    if not employee:
+        return {
+            "message": "Employee not found"
+        }
+
+    employee.name = data.name
+    employee.position = data.position
+    employee.email = data.email
+    employee.joining_date = data.joining_date
+    employee.status = data.status
+
+    db.commit()
+    db.refresh(employee)
+
+    return {
+        "message": "Employee updated successfully",
+        "data": employee
+    }
