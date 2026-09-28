@@ -53,3 +53,21 @@ def update(id: int, data: RequestEmployee, db: Session):
         "message": "Employee updated successfully",
         "data": employee
     }
+
+
+def delete(id: int, db: Session):
+    employee = db.scalar(
+        select(Employee).where(Employee.id == id)
+    )
+
+    if not employee:
+        return {
+            "message": "Employee not found"
+        }
+
+    db.delete(employee)
+    db.commit()
+
+    return {
+        "message": "Employee deleted successfully"
+    }
