@@ -1,7 +1,7 @@
+from sqlalchemy import select
 from sqlalchemy.orm import Session
 from app.schemas.employee import RequestEmployee
 from app.models.employee import Employee
-
 
 
 def store(data: RequestEmployee, db: Session):
@@ -20,3 +20,10 @@ def store(data: RequestEmployee, db: Session):
         "message": "Successfully",
         "data": employee
     }
+
+def list(db: Session):
+    employee = db.scalars(
+        select(Employee)
+    ).all()
+
+    return employee

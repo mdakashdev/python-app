@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 from app.database.connection import get_db
 from app.controller.register_controller import store
 from app.schemas.auth import RegisterRequest
-from app.controller.employee_controller import store
+from app.controller.employee_controller import store, list
 from app.schemas.employee import RequestEmployee
 
 router = APIRouter(
@@ -26,6 +26,11 @@ async def create_employee(
     db: Session = Depends(get_db)
     ):
     return store(request, db)
+
+
+@router.get("/employee")
+def get_employee(db: Session = Depends(get_db)):
+    return list(db)
 
 
 # route create : 23 Sep 26
