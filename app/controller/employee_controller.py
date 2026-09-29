@@ -21,7 +21,7 @@ def store(data: RequestEmployee, db: Session):
         "data": employee
     }
 
-def list(db: Session):
+def get_employees(db: Session):
     employee = db.scalars(
         select(Employee)
     ).all()

@@ -3,8 +3,9 @@ from sqlalchemy.orm import Session
 from app.database.connection import get_db
 from app.controller.register_controller import store
 from app.schemas.auth import RegisterRequest
-from app.controller.employee_controller import store, list, update, delete
+from app.controller.employee_controller import store, get_employees, update, delete
 from app.schemas.employee import RequestEmployee
+from app.schemas.employee_resource import EmployeeResource
 
 router = APIRouter(
     prefix="/api"
@@ -28,9 +29,9 @@ async def create_employee(
     return store(request, db)
 
 
-@router.get("/employee")
+@router.get("/employee", response_model=list[EmployeeResource])
 def get_employee(db: Session = Depends(get_db)):
-    return list(db)
+    return get_employees(db)
 
 @router.put("/employee/{id}")
 def update_employee(
