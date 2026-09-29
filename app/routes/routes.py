@@ -8,10 +8,19 @@ from app.schemas.employee import RequestEmployee
 from app.schemas.employee_resource import EmployeeResource
 from app.schemas.auth import LoginRequest
 from app.controller.auth_controller import login
+from app.dependencies.auth import get_current_user
 
 router = APIRouter(
     prefix="/api"
 )
+
+@router.get("/profile")
+def get_profile(current_user = Depends(get_current_user)):
+    return {
+        "message": "test message",
+        "user": current_user
+    }
+
 
 @router.post("/reg")
 def register(
