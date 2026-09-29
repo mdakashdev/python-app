@@ -1,3 +1,4 @@
+from fastapi import HTTPException
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 from app.schemas.employee import RequestEmployee
@@ -5,6 +6,16 @@ from app.models.employee import Employee
 
 
 def store(data: RequestEmployee, db: Session):
+    existing_employee = db.scalar(
+        select(Employee).where(Employee.email == data.email)
+    )
+
+    if existing_employee:
+        raise HTTPException(
+            status_code=422,
+            detail="Email already exists"
+        )
+
     employee = Employee(
         name = data.name,
         position = data.position,

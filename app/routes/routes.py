@@ -40,7 +40,8 @@ def login_user(request: LoginRequest, db: Session = Depends(get_db)):
 @router.post("/employee/create")
 async def create_employee(
     request: RequestEmployee,
-    db: Session = Depends(get_db)
+    db: Session = Depends(get_db),
+    current_user = Depends(get_current_user)
     ):
     return store(request, db)
 
