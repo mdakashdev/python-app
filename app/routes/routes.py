@@ -6,6 +6,8 @@ from app.schemas.auth import RegisterRequest
 from app.controller.employee_controller import store, get_employees, update, delete
 from app.schemas.employee import RequestEmployee
 from app.schemas.employee_resource import EmployeeResource
+from app.schemas.auth import LoginRequest
+from app.controller.auth_controller import login
 
 router = APIRouter(
     prefix="/api"
@@ -19,6 +21,11 @@ def register(
      #data = await request.json()
      #print(data)
     return store(request, db)
+
+@router.post("/login")
+def login_user(request: LoginRequest, db: Session = Depends(get_db)):
+    print(request)
+    return login(request, db)
 
 
 @router.post("/employee/create")
