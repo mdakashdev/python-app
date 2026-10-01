@@ -11,7 +11,8 @@ from app.controller.auth_controller import login
 from app.dependencies.auth import get_current_user
 
 router = APIRouter(
-    prefix="/api"
+    prefix="/api",
+    tags=["Employee"]
 )
 
 @router.get("/profile")
