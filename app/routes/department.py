@@ -1,6 +1,8 @@
-from fastapi import APIRouter
-
-
+from fastapi import APIRouter, Depends
+from app.controller.department_controller import get_list
+from sqlalchemy.orm import Session
+from app.database.connection import get_db
+from app.dependencies.auth import get_current_user
 
 router = APIRouter(
     prefix="/api/department",
@@ -8,7 +10,8 @@ router = APIRouter(
 )
 
 @router.get("/list")
-def get_list():
-    return {
-        "message": "test"
-    }
+def get_department_list(
+    db: Session = Depend(get_db),
+    current_user = Depends(get_current_user)
+   ):
+    return get_List(db)
