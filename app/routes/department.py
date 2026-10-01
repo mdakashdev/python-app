@@ -11,7 +11,7 @@ router = APIRouter(
 
 @router.get("/list")
 def get_department_list(
-    db: Session = Depend(get_db),
+    db: Session = Depends(get_db),
     current_user = Depends(get_current_user)
    ):
     return get_List(db)
