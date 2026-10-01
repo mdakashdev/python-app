@@ -14,4 +14,4 @@ def get_department_list(
     db: Session = Depends(get_db),
     current_user = Depends(get_current_user)
    ):
-    return get_List(db)
+    return get_list(db)

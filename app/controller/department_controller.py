@@ -9,5 +9,8 @@ def get_list(db: Session):
         select(Department)
     ).all()
 
-    return department
+    return {
+        "message": "Successfully",
+        "data": department
+    }
 
